@@ -8,8 +8,17 @@ defmodule PhxApiWeb.Router do
   scope "/todos", PhxApiWeb do
     pipe_through :api
 
-    get "/", TodosController, :todos
+    get "/", TodosController, :index
     get "/:id", TodosController, :show
 
   end
+
+
+  scope "/auth" PhxApiWeb do
+    pipe_through :api
+
+    post "/login", AuthController, :login
+    post "/signup", AuthController, :signup
+  end
+
 end
