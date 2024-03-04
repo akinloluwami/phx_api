@@ -3,7 +3,7 @@ import Config
 # Configure your database
 config :phx_api, PhxApi.Repo,
   username: "postgres",
-  password: "postgres",
+  password: "password",
   hostname: "localhost",
   database: "phx_api_dev",
   stacktrace: true,
