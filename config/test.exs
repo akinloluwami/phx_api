@@ -17,14 +17,8 @@ config :lixr, Lixr.Repo,
 # you can enable the server option below.
 config :lixr, LixrWeb.Endpoint,
   http: [ip: {127, 0, 0, 1}, port: 4002],
-  secret_key_base: "zJ6/rAHkhuBSLac2lSWX0Dfl/71gtjYybV16lMc1Ht5ASR3uIrK8IDKJabDLc3EB",
+  secret_key_base: "wzu9nF4eKEzmPwM6T7J9hozaJIToSVH+V+YHja3zNaxNr5bfvXEd9yeKo6YMb4n4",
   server: false
-
-# In test we don't send emails.
-config :lixr, Lixr.Mailer, adapter: Swoosh.Adapters.Test
-
-# Disable swoosh api client as it is only required for production adapters.
-config :swoosh, :api_client, false
 
 # Print only warnings and errors during test
 config :logger, level: :warning

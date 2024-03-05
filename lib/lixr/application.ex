@@ -12,8 +12,6 @@ defmodule Lixr.Application do
       Lixr.Repo,
       {DNSCluster, query: Application.get_env(:lixr, :dns_cluster_query) || :ignore},
       {Phoenix.PubSub, name: Lixr.PubSub},
-      # Start the Finch HTTP client for sending emails
-      {Finch, name: Lixr.Finch},
       # Start a worker by calling: Lixr.Worker.start_link(arg)
       # {Lixr.Worker, arg},
       # Start to serve requests, typically the last entry

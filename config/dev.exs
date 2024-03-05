@@ -5,7 +5,7 @@ config :lixr, Lixr.Repo,
   username: "postgres",
   password: "password",
   hostname: "localhost",
-  database: "lixr_dev",
+  database: "lixr",
   stacktrace: true,
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
@@ -23,11 +23,8 @@ config :lixr, LixrWeb.Endpoint,
   check_origin: false,
   code_reloader: true,
   debug_errors: true,
-  secret_key_base: "cQbv1P2aDoOaBofc1PrCmFNZdwkMmY1jMMgy0oihpCdDNXYqXgRp+zAlMUO83dkw",
-  watchers: [
-    esbuild: {Esbuild, :install_and_run, [:lixr, ~w(--sourcemap=inline --watch)]},
-    tailwind: {Tailwind, :install_and_run, [:lixr, ~w(--watch)]}
-  ]
+  secret_key_base: "Eus9gnlYgOzxRiq1Z6YXe7fPQ9c69Kh8y88M37BzsrQ4rOzRHHPQ08Ho4EBF53fu",
+  watchers: []
 
 # ## SSL Support
 #
@@ -52,16 +49,6 @@ config :lixr, LixrWeb.Endpoint,
 # configured to run both http and https servers on
 # different ports.
 
-# Watch static and templates for browser reloading.
-config :lixr, LixrWeb.Endpoint,
-  live_reload: [
-    patterns: [
-      ~r"priv/static/(?!uploads/).*(js|css|png|jpeg|jpg|gif|svg)$",
-      ~r"priv/gettext/.*(po)$",
-      ~r"lib/lixr_web/(controllers|live|components)/.*(ex|heex)$"
-    ]
-  ]
-
 # Enable dev routes for dashboard and mailbox
 config :lixr, dev_routes: true
 
@@ -74,9 +61,3 @@ config :phoenix, :stacktrace_depth, 20
 
 # Initialize plugs at runtime for faster development compilation
 config :phoenix, :plug_init_mode, :runtime
-
-# Include HEEx debug annotations as HTML comments in rendered markup
-config :phoenix_live_view, :debug_heex_annotations, true
-
-# Disable swoosh api client as it is only required for production adapters.
-config :swoosh, :api_client, false
