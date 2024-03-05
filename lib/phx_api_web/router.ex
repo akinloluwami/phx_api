@@ -13,7 +13,6 @@ defmodule PhxApiWeb.Router do
 
   end
 
-
   scope "/auth" PhxApiWeb do
     pipe_through :api
 
