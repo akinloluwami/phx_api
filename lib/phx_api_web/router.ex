@@ -13,10 +13,10 @@ defmodule PhxApiWeb.Router do
 
   end
 
-  scope "/auth" PhxApiWeb do
+
+  scope "/auth", PhxApiWeb do
     pipe_through :api
 
-    post "/login", AuthController, :login
     post "/signup", AuthController, :signup
   end
 

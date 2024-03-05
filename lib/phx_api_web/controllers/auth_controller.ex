@@ -3,15 +3,14 @@ defmodule PhxApiWeb.AuthController do
 
 
 
+  def signup(conn, params) do
+    changeset = User.changeset(%User{}, params)
 
-  def signup(conn, %{"user" => user_params}) do
-    changeset = User.changeset(%User{}, user_params)
-
-    case Repo.insert(changeset) do
+    case PhxApi.Repo.insert(changeset) do
       {:ok, user} ->
         conn
         |> put_status(:created)
-        |> render("show.json", user: user)
+        |> 'Created'
 
       {:error, changeset} ->
         conn
@@ -21,7 +20,6 @@ defmodule PhxApiWeb.AuthController do
 
   end
 
-  def login(conn) do
-  end
+
 
 end
