@@ -7,5 +7,7 @@ defmodule LixrWeb.Router do
 
   scope "/api", LixrWeb do
     pipe_through :api
+
+    get "/", DefaultController, :index
   end
 end
