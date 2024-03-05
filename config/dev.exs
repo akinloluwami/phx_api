@@ -3,9 +3,9 @@ import Config
 # Configure your database
 config :lixr, Lixr.Repo,
   username: "postgres",
-  password: "postgres",
+  password: "password",
   hostname: "localhost",
-  database: "lixr_dev",
+  database: "lixr",
   stacktrace: true,
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
