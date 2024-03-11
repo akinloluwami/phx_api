@@ -8,7 +8,7 @@ defmodule Lixr.Users.User do
     field :full_name, :string
     field :gender, :string
     field :bio, :string
-    field :account_id, :binary_id
+    belongs_to :account, Lixr.Accounts.Account
 
     timestamps(type: :utc_datetime)
   end
@@ -16,7 +16,7 @@ defmodule Lixr.Users.User do
   @doc false
   def changeset(user, attrs) do
     user
-    |> cast(attrs, [:full_name, :gender, :bio])
-    |> validate_required([:full_name, :gender, :bio])
+    |> cast(attrs, [:account_id, :full_name, :gender, :bio])
+    |> validate_required([:account_id])
   end
 end
